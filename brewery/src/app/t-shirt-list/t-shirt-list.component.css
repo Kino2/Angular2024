@@ -1,0 +1,19 @@
+.clearance{
+    border: 2px solid green;
+}
+
+img{
+    width: 100px;
+}
+td {
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+tr{
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
