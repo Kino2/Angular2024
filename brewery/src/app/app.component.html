@@ -7,20 +7,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-        <a class="nav-link" href="#">Productos</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Inicio</a>
         <a class="nav-link" href="#">Ofertas</a>
-        <a class="nav-link" href="#">Nosotros</a>
-        <a class="nav-link" href="#">Contacto</a>
+        <a class="nav-link" [routerLink]="['/acerca']">Contacto</a>
       </div>
     </div>
   </div>
 </nav>
 <div>
   <div class="container">
-    <div class="row">
-      <div class="col-8"><app-t-shirt-list></app-t-shirt-list></div>
-      <div class="col-4"><app-shopping-cart></app-shopping-cart></div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>

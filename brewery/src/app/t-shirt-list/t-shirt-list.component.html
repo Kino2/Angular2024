@@ -9,6 +9,7 @@
             <th>Año</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,10 @@
             }@else {
             <td>SIN STOCK</td>
             }
+            <td><button class="btn btn-primary btn-sm" (click)="downQuantity(tshirt)">-</button>
+                <input type="text" [(ngModel)] ="tshirt.quantity" (keyup)="changeQuantity($event, tshirt)">
+                <button class="btn btn-primary btn-sm" (click)="upQuantity(tshirt)">+</button>
+            </td>
         </tr>
         } @empty {
         <tr>

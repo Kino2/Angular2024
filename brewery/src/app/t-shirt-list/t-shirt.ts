@@ -5,4 +5,5 @@ export interface Tshirt{
     price : number;
     stock : number;
     clearance : boolean;
+    quantity: number;
 }

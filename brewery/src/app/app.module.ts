@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TShirtListComponent } from './t-shirt-list/t-shirt-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { FormsModule } from '@angular/forms';
+import { BreweryTShirtsComponent } from './brewery-t-shirts/brewery-t-shirts.component';
+import { BreweryAboutComponent } from './brewery-about/brewery-about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TShirtListComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    BreweryTShirtsComponent,
+    BreweryAboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
