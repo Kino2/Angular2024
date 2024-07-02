@@ -57,19 +57,8 @@ export class TShirtListComponent {
     }
   ];
 
-  upQuantity(tshirt: Tshirt): void {
-    if (tshirt.quantity < tshirt.stock) {
-      tshirt.quantity++;
-    }
+  maxReached(m: string) {
+    alert(m);
   }
-
-  downQuantity(tshirt: Tshirt): void {
-    if (tshirt.quantity > 0) {
-      tshirt.quantity--;
-    }
-  }
-  changeQuantity(event: KeyboardEvent, tshirt: Tshirt): void {
-
-    }
-  }
+}
 
