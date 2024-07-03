@@ -1,1 +1,6 @@
-<p>ea</p>
+<h3>Carrito de compras</h3>
+<ul>
+    <li *ngFor="let tshirt of cartList">
+        {{tshirt.name}} : {{tshirt.quantity}}
+    </li>
+</ul>

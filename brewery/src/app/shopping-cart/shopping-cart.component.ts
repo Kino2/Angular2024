@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TShirtCartService } from '../t-shirt-cart.service';
+import { Tshirt } from '../t-shirt-list/t-shirt';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ShoppingCartComponent {
 
+  cartList : Tshirt[] = [];
+  constructor(private cart: TShirtCartService){
+    cart.cartList.subscribe(c => this.cartList = c)
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Tshirt } from './t-shirt';
+import { TShirtCartService } from '../t-shirt-cart.service';
 
 @Component({
   selector: 'app-t-shirt-list',
@@ -57,8 +58,16 @@ export class TShirtListComponent {
     }
   ];
 
+  constructor(private cart: TShirtCartService) {
+    
+  }
   maxReached(m: string) {
     alert(m);
+  }
+  addToCart(tshirt: Tshirt): void {
+    this.cart.addToCart(tshirt)
+    tshirt.stock -= tshirt.quantity;
+    tshirt.quantity = 0;
   }
 }
 

@@ -10,6 +10,8 @@
             <th>Precio</th>
             <th>Stock</th>
             <th>Compra</th>
+            <th>Cantidad</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,9 +21,14 @@
             <td>{{tshirt.year}}</td>
             <td>{{tshirt.price | currency}}</td>
             <td>{{tshirt.stock}}</td>
-            <td><span *ngIf="tshirt.stock == 0">SIN STOCK</span></td>
-            <td><app-input-integer [(quantity)]="tshirt.quantity" [max]="tshirt.stock"*ngIf="tshirt.stock" (maxReached)="maxReached($event)"></app-input-integer></td>    
-            Cant:{{tshirt.quantity}}
+            <td><span class="bg-warning" *ngIf="tshirt.stock == 0">SIN STOCK</span></td>
+            <td>
+                <app-input-integer [(quantity)]="tshirt.quantity" [max]="tshirt.stock" *ngIf="tshirt.stock"
+                    (maxReached)="maxReached($event)"></app-input-integer>
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="addToCart(tshirt)">Comprar</button>
+            </td>
         </tr>
     </tbody>
 </table>
