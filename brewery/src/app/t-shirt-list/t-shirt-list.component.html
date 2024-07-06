@@ -19,7 +19,7 @@
             <td><img [src]="tshirt.image" [alt]="tshirt.name"></td>
             <td>{{tshirt.name | uppercase}}</td>
             <td>{{tshirt.year}}</td>
-            <td>{{tshirt.price | currency}}</td>
+            <td>${{tshirt.price}}</td>
             <td>{{tshirt.stock}}</td>
             <td><span class="bg-warning" *ngIf="tshirt.stock == 0">SIN STOCK</span></td>
             <td>

@@ -10,7 +10,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TShirtCartService {
   private _cartList: Tshirt[] = [];
-  cartList: BehaviorSubject<Tshirt[]> = new BehaviorSubject(this._cartList);
+  cartList: BehaviorSubject<Tshirt[]> = new BehaviorSubject<Tshirt[]>([]);
+
 
   constructor() { }
 
@@ -25,5 +26,7 @@ export class TShirtCartService {
     this.cartList.next(this._cartList);
   }
 
+  ngOnInit() : void{
+  }
 
 }
