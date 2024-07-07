@@ -27,7 +27,7 @@
                     (maxReached)="maxReached($event)"></app-input-integer>
             </td>
             <td>
-                <button class="btn btn-primary" (click)="addToCart(tshirt)">Comprar</button>
+                <button class="btn btn-primary" (click)="addToCart(tshirt)" *ngIf="tshirt.stock > 0">Comprar</button>
             </td>
         </tr>
     </tbody>

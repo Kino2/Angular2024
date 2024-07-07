@@ -1,6 +1,12 @@
-<h3>Carrito de compras</h3>
-<ul>
-    <li *ngFor="let tshirt of cartList$ | async">
-        {{tshirt.name}} : {{tshirt.quantity}}
-    </li>
-</ul>
+<div class="cart-container">
+    <h3>Carrito de compras</h3>
+    <ul>
+        <ng-container *ngFor="let tshirt of cartList$ | async">
+            <li *ngIf="tshirt.quantity > 0">
+                <span class="tshirt-name">{{tshirt.name}}</span>
+                <span class="tshirt-quantity">{{tshirt.quantity}}</span>
+            </li>
+        </ng-container>
+    </ul>
+    
+</div>

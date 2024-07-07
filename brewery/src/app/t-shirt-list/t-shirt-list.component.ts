@@ -23,9 +23,11 @@ export class TShirtListComponent {
     alert(m);
   }
   addToCart(tshirt: Tshirt): void {
-    this.cart.addToCart(tshirt)
-    tshirt.stock -= tshirt.quantity;
-    tshirt.quantity = 0;
+    if(tshirt.quantity > 0){
+      this.cart.addToCart(tshirt)
+      tshirt.stock -= tshirt.quantity;
+      tshirt.quantity = 0;
+    }
   }
 }
 

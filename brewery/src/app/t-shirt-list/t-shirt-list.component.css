@@ -1,19 +1,114 @@
-.clearance{
-    border: 2px solid green;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-img{
-    width: 100px;
+h1 {
+    text-align: center;
+    color: #444;
+    margin-top: 20px;
+    font-size: 2.5em;
 }
-td {
-    font-size: 20px;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.col-8, .col-4 {
+    padding: 10px;
+}
+
+.col-8 {
+    flex: 0 0 65%;
+}
+
+.col-4 {
+    flex: 0 0 30%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.table td {
+    color: #666;
+}
+
+.clearance {
+    border: 2px solid #28a745; /* Cambiar a un verde más fuerte */
+    background-color: #d4edda; /* Fondo verde claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadir una sombra ligera */
+    color: #155724; /* Texto verde oscuro */
+    font-weight: bold; /* Hacer el texto más destacado */
+}
+
+.clearance td {
+    background-color: #d4edda; /* Fondo verde claro para las celdas */
+}
+
+
+
+img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+td, th {
+    font-size: 16px;
     vertical-align: middle;
     text-align: center;
 }
-tr{
-    font-size: 20px;
-    vertical-align: middle;
-    text-align: center;
+
+.btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
 
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.bg-warning {
+    background-color: #ffc107;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .col-8, .col-4 {
+        flex: 0 0 100%;
+    }
+}
