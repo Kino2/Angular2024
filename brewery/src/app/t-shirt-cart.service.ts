@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class TShirtCartService {
+
   private _cartList: Tshirt[] = [];
   cartList: BehaviorSubject<Tshirt[]> = new BehaviorSubject<Tshirt[]>([]);
 
@@ -18,15 +19,18 @@ export class TShirtCartService {
   addToCart(tshirt: Tshirt) {
     let item: Tshirt | undefined = this._cartList.find((v1) => v1.name == tshirt.name);
     if (!item) {
-      this._cartList.push({...tshirt});
+      this._cartList.push({ ...tshirt });
     } else {
       item.quantity += tshirt.quantity;
     }
     console.log(this._cartList);
     this.cartList.next(this._cartList);
   }
-
-  ngOnInit() : void{
+  removeFromCart(tshirt: Tshirt) {
+    let item: Tshirt | undefined = this._cartList.find((v1) => v1.name !== tshirt.name);
+    this.cartList.next(this._cartList);
+  }
+  ngOnInit(): void {
   }
 
 }

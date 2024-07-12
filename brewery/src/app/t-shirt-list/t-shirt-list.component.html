@@ -1,6 +1,7 @@
 <br>
 <h1>Camisetas en venta</h1>
 <br>
+
 <table class="table">
     <thead>
         <tr>
@@ -14,24 +15,29 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let tshirt of tshirts" [ngClass]="{'clearance' : tshirt.clearance}">
+        @for(tshirt of tshirts | async; track tshirt.name){
+        <tr [ngClass]="{'clearance' : tshirt.clearance}">
             <td><img [src]="tshirt.image" [alt]="tshirt.name"></td>
-            <td>{{tshirt.name | uppercase}}</td>
+            <td>{{tshirt.name}}</td>
             <td>{{tshirt.year}}</td>
             <td>${{tshirt.price}}</td>
-            @if (tshirt.stock >0) {
+            @if (tshirt.stock > 0) {
             <td>{{tshirt.stock}}</td>
             }
             @else {
             <td><span class="bg-warning">SIN STOCK</span></td>
             }
             <td>
-                <app-input-integer [(quantity)]="tshirt.quantity" [max]="tshirt.stock" *ngIf="tshirt.stock"
-                    (maxReached)="maxReached($event)"></app-input-integer>
+                @if(tshirt.stock){
+                <app-input-integer [(quantity)]="tshirt.quantity" [max]="tshirt.stock"></app-input-integer>
+                }
             </td>
             <td>
-                <button class="btn btn-primary" (click)="addToCart(tshirt)" *ngIf="tshirt.stock > 0">Comprar</button>
+                @if(tshirt.stock > 0){
+                <button class="btn btn-primary" (click)="addToCart(tshirt)">Comprar</button>
+                }
             </td>
         </tr>
+        }
     </tbody>
 </table>
