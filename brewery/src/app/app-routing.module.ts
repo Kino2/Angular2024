@@ -13,6 +13,7 @@ const routes: Routes = [
     path: 'camisetas',
     component: BreweryTShirtsComponent
   },
+  
   {
     path: 'acerca',
     component: BreweryAboutComponent

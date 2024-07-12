@@ -9,7 +9,6 @@
             <th>Año</th>
             <th>Precio</th>
             <th>Stock</th>
-            <th>Compra</th>
             <th>Cantidad</th>
             <th></th>
         </tr>
@@ -20,8 +19,12 @@
             <td>{{tshirt.name | uppercase}}</td>
             <td>{{tshirt.year}}</td>
             <td>${{tshirt.price}}</td>
+            @if (tshirt.stock >0) {
             <td>{{tshirt.stock}}</td>
-            <td><span class="bg-warning" *ngIf="tshirt.stock == 0">SIN STOCK</span></td>
+            }
+            @else {
+            <td><span class="bg-warning">SIN STOCK</span></td>
+            }
             <td>
                 <app-input-integer [(quantity)]="tshirt.quantity" [max]="tshirt.stock" *ngIf="tshirt.stock"
                     (maxReached)="maxReached($event)"></app-input-integer>
